@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- JAVA와 연결할 Mapper 파일 설정 -->
+<mapper namespace="poly.persistance.mapper.IDietMapper">
+	<!-- 로그인 하기 -->
+	<select id="loginPost" resultType="DietDTO"
+		parameterType="DietDTO">
+		SELECT
+			EMAIL,
+			USER_AN,
+			PASSWORD,
+			USER_NO
+		FROM
+			USER_INFO
+		WHERE
+			EMAIL = #{email} AND PASSWORD = #{password}
+	</select>
+	
+	<!-- 이메일 중복 체크 -->
+	<select id="emailCheck" parameterType="DietDTO" resultType="DietDTO">
+		SELECT 
+			EMAIL 
+		FROM 
+			USER_INFO
+		WHERE 
+			EMAIL = #{email}
+	</select>
+	
+	<!-- 회원가입 하기 -->
+	<insert id="insertMember" parameterType="DietDTO">
+		INSERT INTO USER_INFO(
+			USER_NO,
+			EMAIL,
+			PASSWORD,
+			USER_AN,
+			USER_NAME,
+			REG_ID,
+			CHD_ID
+		)
+		VALUES(
+			(SELECT NVL(MAX(U.USER_NO),0)+1 FROM USER_INFO U WHERE 1=1),
+			#{email},
+			#{password},
+			#{user_an},
+			#{user_name},
+			#{user_name},
+			#{user_name}
+		)
+	</insert>
+
+	<!-- 회원가입시 생성되는 회원 기초대사량 -->
+	<insert id="bodyprofile" parameterType="DietDTO">
+		INSERT INTO BODY_INFO(
+			USER_NO,
+			KEEP_KCAL,
+			ACTIVITY,
+			SEX,
+			BASIC,
+			GOAL_KCAL,
+			TALL,
+			AGE,
+			WEIGHT,
+			HOW_EXER,
+			REG_ID,
+			CHD_ID
+		)
+		VALUES(
+			(SELECT NVL(MAX(B.USER_NO),0)+1 FROM BODY_INFO B WHERE 1=1),
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			#{user_name},
+			#{user_name}
+		)
+	</insert>
+
+	<!-- 비밀번호 수정을 위해 비밀전호 가져오기 -->
+	<select id="getpwd" resultType="DietDTO" parameterType="DietDTO">
+		SELECT
+			PASSWORD
+		FROM
+			USER_INFO
+		WHERE
+			USER_NO = #{user_no} AND PASSWORD = #{password}
+	</select>
+
+	<!-- 비밀번호 수정 -->
+	<update id="pwdChange" parameterType="DietDTO">
+		UPDATE USER_INFO
+		SET
+			PASSWORD = #{password}
+		WHERE
+			USER_NO = #{user_no}
+	</update>
+	
+	<!-- 기초대사량 입력 -->
+	<update id="metabolismPost" parameterType="DietDTO">
+		UPDATE BODY_INFO
+		SET
+			AGE=#{age},
+			SEX=#{sex},
+			ACTIVITY=#{activity},
+			TALL=#{tall},
+			WEIGHT=#{weight},
+			HOW_EXER=#{how_exer},
+			BASIC=#{basic},
+			KEEP_KCAL=#{keep_kcal},
+			GOAL_KCAL=#{goal_kcal},
+			CHD_ID=(SELECT USER_NAME FROM USER_INFO
+			WHERE USER_NO = #{user_no})
+		WHERE
+			USER_NO = #{user_no}
+	</update>
+	
+	<!-- 게시판 리스트 쿼리 -->
+   <select id="myMetabolism" resultType="DietDTO" parameterType="DietDTO">
+      SELECT 
+      	*
+      FROM 
+      	BODY_INFO
+      WHERE
+      	USER_NO = #{user_no}
+   </select>
+	
+	<!-- 임시 비밀번호로 값 업데이트 쿼리 -->
+   	<update id="setTmpPwd" parameterType="DietDTO">
+      UPDATE USER_INFO
+      SET
+      	PASSWORD = #{password}
+      WHERE
+      	EMAIL = #{email} AND USER_NAME = #{user_name}
+   	</update>
+   
+    <!-- 비밀번호 수정을 위해 비밀전호 가져오기 -->
+	<select id="getemailnmchk" resultType="DietDTO" parameterType="DietDTO">
+		SELECT
+			EMAIL,
+			USER_NAME
+		FROM
+			USER_INFO
+		WHERE
+			EMAIL = #{email} AND USER_NAME = #{user_name}
+	</select>
+	
+	<!-- 목표칼로리 가져오기 -->
+	<select parameterType="DietDTO" resultType="DietDTO" id="getGoalKcal">
+	SELECT 
+		GOAL_KCAL 
+	FROM
+		BODY_INFO
+	WHERE
+		USER_NO = ${user_no} 
+	</select>
+	
+	<!-- 서비스단에서 목표칼로리 계산하기 위한 목표칼로리 가져오기 -->
+	<select parameterType="DietDTO" resultType="DietDTO" id="getmenugoalkcal">
+	SELECT
+		GOAL_KCAL
+	FROM
+		BODY_INFO
+	WHERE
+		USER_NO = ${user_no}
+	</select>
+	
+	<!-- 고구마,닭가슴살,아몬드 3가지의 영양정보 가져오기  -->
+	<select id="getgodack" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 1
+	</select>
+	
+	<!-- 잡곡밥,홍두께살,올리브유 3가지의 영양정보 가져오기  -->
+	<select id="getjobhong" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 2
+	</select>
+	
+	<!-- 통밀빵,훈제연어,땅콩버터 3가지의 영양정보 가져오기  -->
+	<select id="gettonghun" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 3
+	</select>
+	
+	<!-- 흰쌀밥,계란,아보카도 3가지의 영양정보 가져오기  -->
+	<select id="geteggkado" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 4
+	</select>
+	
+	<!-- 현미밥, 우둔살, 올리브유 3가지의 영양정보 가져오기  -->
+	<select id="hyunwu" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 5
+	</select>
+		
+	<!-- 바나나, 계란, 아몬드 3가지의 영양정보 가져오기  -->
+	<select id="baegg" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 6
+	</select>
+	
+	<!-- 현미밥, 돼지안심, 스트링치즈 3가지의 영양정보 가져오기  -->
+	<select id="gethyunsae" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 7
+	</select>
+	
+	<!-- 듀럼밀면, 새우, 바질페스토 3가지의 영양정보 가져오기  -->
+	<select id="getdudack" resultType="FoodDTO" parameterType="FoodDTO">
+	SELECT
+		TAN_NAME,
+		TAN_GRAM,
+		TAN_KCAL,
+		DAN_NAME,
+		DAN_GRAM,
+		DAN_KCAL,
+		FAT_NAME,
+		FAT_GRAM,
+		FAT_KCAL
+	FROM
+		FOOD_INFO
+	WHERE
+		FOOD_NO = 8
+	</select>
+</mapper>
