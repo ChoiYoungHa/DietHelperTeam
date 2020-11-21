@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <!------ jquery   ---------->
+<script src="/resources/jquery-3.5.1.min.js"></script>
 <meta charset="UTF-8">
 <title>회원가입 화면</title>
 </head>
@@ -10,7 +12,7 @@
 
 	<h1>회원가입</h1>
 	<hr/>
-	<form id="inserForm" method="post" action="/insertMember.do" onsubmit="return InsertCheck()">
+	<form method="post" action="/insertMember.do" onsubmit="return InsertCheck()">
 		<table border="1">
 			<col width="150px">
 			<col width="150px">
@@ -48,7 +50,6 @@
 		</p>
 	</form>
 	<hr/>
-<script src="/js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/resources/js/UserRegForm.js"></script>
 </body>
 </html>

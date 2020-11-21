@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <!------ jquery   ---------->
+<script src="/resources/jquery-3.5.1.min.js"></script>
 <meta charset="UTF-8">
 <title>비밀번호 수정</title>
 </head>
@@ -34,7 +36,6 @@
 <input type="submit" value="비밀번호수정">
 <input type="reset" value="다시 작성">
 </form>
-<script  src="/resources/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/resources/js/timeCheck.js"></script>
 <script type="text/javascript" src="/resources/js/pwdchange.js"></script>
 </body>

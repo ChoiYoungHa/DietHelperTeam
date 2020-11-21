@@ -15,6 +15,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <!------ jquery   ---------->
+<script src="/resources/jquery-3.5.1.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -89,11 +91,10 @@
 <div id="df_fat"></div>
 </div>
 </div>
-
+<button onclick="history.back()">뒤로가기</button>
 </body>
-
-<script src="/resources/jquery-3.5.1.min.js"></script>
-    <script>
+<script type="text/javascript" src="/resources/js/timeCheck.js"></script>
+    <script type="text/javascript">
     
     //아침 메뉴 변경
     var bf_food = "";

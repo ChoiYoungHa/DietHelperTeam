@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <!------ jquery   ---------->
+<script src="/resources/jquery-3.5.1.min.js"></script>
 <meta charset="UTF-8">
 <title>기초대사량 구하기</title>
 </head>
@@ -55,9 +57,9 @@
 			<input type="submit" value="입력">
 			<input type="button" value="비밀번호 수정" onclick="location.href='/pwdchange.do'">
 			<input type="reset" value="다시 작성">
+			<button onclick="history.back()">뒤로가기</button>
 		</p>
 		</form>
-<script src="/resources/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="/resources/js/timeCheck.js"></script>
 <script type="text/javascript" src="/resources/js/Metabolism.js"></script>
 </body>

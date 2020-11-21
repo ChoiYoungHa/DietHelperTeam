@@ -37,6 +37,8 @@
 	<td><%=rDTO.getGoal_kcal()%>
 </table>
 <button onclick="location.href ='/Metabolism.do'">설정</button>
+<button onclick="history.back()">뒤로가기</button>
+<button onclick="location.href ='/MyFoodList.do'">음식추천받기</button>
 <!-- 데이터종료 시간 js 사용 -->
 <script type="text/javascript" src="/resources/js/timeCheck.js"></script>
 </body>

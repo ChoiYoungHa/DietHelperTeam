@@ -315,7 +315,7 @@ public class DietController {
 
 		return "/user/temporaryPwd"; // jsp없음
 	}
-	
+
 	// email, name 확인 작업 @ResponseBody 사용시 http에 값을 전달함
 	@ResponseBody
 	@RequestMapping(value = "/Temporarypwd/emailnmchk", method = RequestMethod.POST)
@@ -617,7 +617,7 @@ public class DietController {
 		int res = dietService.metabolismPost(pDTO);
 
 		String msg = "";
-		String url = "/MyFoodList.do";
+		String url = "/Diet/MyMetabolism.do";
 
 		if (res < 1) {
 			msg = "등록에 실패했습니다";
