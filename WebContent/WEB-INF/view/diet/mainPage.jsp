@@ -10,12 +10,11 @@
 <meta content="" name="description">
 <meta content="" name="keywords">
 
- <!------ jquery   ---------->
+<!------ jquery   ---------->
 <script src="/resources/jquery-3.5.1.min.js"></script>
 
 <!-- DietHelper 메인 로고 -->
 <link href="/resource/assets/img/healthlogo.JPG" rel="icon">
-<link href="/resource/assets/img/healthlogo.JPG" rel="apple-touch-icon">
 
 <!-- 상단 DietHelper 로고 폰트 -->
 <link
@@ -50,14 +49,11 @@
 		<div class="container">
 
 			<div class="collapse navbar-collapse" id="navbarResponsive">
-<ul class="navbar-nav ml-auto">
-										<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#" style="color:#778899;"><b>Diet<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-				viewBox="0 0 24 24" fill="none" stroke="currentColor"
-				stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-				class="feather feather-activity">
-				<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>&nbsp;Helper</b></a></li>
-
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#" style="color:#778899;"><b>Diet
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>&nbsp;
+						Helper</b></a></li>
 				</ul>
 			</div>
 		</div>
@@ -89,9 +85,10 @@
 						<span>나의 프로필</span></a></li>
 				<li><a href="/MyFoodList.do"><i class="bx bx-book-content"></i>나의
 						식단</a></li>
-						
 				<li><a href="#healthwise"><i class="bx bx-server"></i>다이어트
 						팁</a></li>
+				<li><a href="javascript:window.history.back();"><i class="bx bx-server"></i>뒤로가기</a></li>
+						
 			</ul>
 		</nav>
 	</header>
@@ -102,31 +99,29 @@
 			<section id="hero"
 				class="d-flex flex-column justify-content-center align-items-center">
 				<div class="mx-auto text-center">
-					<p class="mx-auto my-0 text-uppercase" style="color: lightgray;">
-
-						<b>Diet&nbsp;</b>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-							viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-							class="feather feather-activity">
-				<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-						<br /> Helper
-
+				<h1 class="mx-auto my-0 text-uppercase" style="color:lightgray;font-size:2.0em;">
+					<b>Diet</b>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+				</h1>
+				<h1 class="mx-auto my-0 text-uppercase" style="color:lightgray;font-size:2.0em;">
+				<b>Helper</b>
+				</h1>
+				<br>
 				</div>
-				<div class="hero-container" data-aos="fade-in">
-					<h1>
-						<a href="/Diet/MyMetabolism.do">나의 기초대사량</a>
-						<a href="/MyFoodList.do">음식추천받기</a>
-					</h1>
-					<p>
-						<a href="/ProFile.do"><span class="typed"
-							data-typed-items="Click ME! ,DietHelper, 나에게 맞는 식단 세팅, DietHelper와 함께하세요!"></span></a>
-					</p>
+				
+		<div class="hero-container" data-aos="fade-in">
+				<h1>
+					<a href="/Diet/MyMetabolism.do">나의 기초대사량</a>
+				</h1>
+				<p>
+					<a href="/Diet/MyMetabolism.do"><span class="typed"
+					data-typed-items="Click ME! ,DietHelper, 나에게 맞는 식단 세팅, DietHelper와 함께하세요!"></span></a>
+				</p>
 
-					<h1>
-						<button type="button" onclick="location.href='/MyFoodList.do'"
-							class="btn btn-success btn-lg btn-block" style="height: 80px;">
-							나의 식단 리스트</button>
+				<h1>
+					<button type="button" onclick="location.href='/MyFoodList.do'"
+					class="btn btn-success btn-lg btn-block" style="height: 80px;">
+					나의 식단 리스트</button>
 					</h1>
 				</div>
 			</section>
@@ -142,134 +137,124 @@
 				<div class="section-title">
 					<h2>
 						DIET
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-							viewBox="0 0 24 24" fill="none" stroke="currentColor"
-							stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-							class="feather feather-activity">
-				<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
 						TIP!
 					</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius
-						consequatur ex aliquid fuga eum quidem. Sit sint consectetur
-						velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit
-						suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem
-						hic quas.</p>
+					<p>DietHelper 서비스 이용과 함께 유용한 Diet Tip을 참고하세요!</p>
 				</div>
 
 				<div class="owl-carousel testimonials-carousel">
 
 					<div class="testimonial-item" data-aos="fade-up">
 						<p>
-							<i class="bx bxs-quote-alt-left quote-icon-left"></i> Proin
-							iaculis purus consequat sem cure digni ssim donec porttitora
-							entum suscipit rhoncus. Accusantium quam, ultricies eget id,
-							aliquam eget nibh et. Maecen aliquam, risus at semper. <i
-								class="bx bxs-quote-alt-right quote-icon-right"></i>
+							<i class="bx bxs-quote-alt-left quote-icon-left"></i> 
+							다이어트 시에는, <br>
+							마이크로 뉴트리션 <br>(비타민, 마그네슘 등)이 <br>
+							결핍되기에 보충제를 <br>섭취하는 것이 좋다.
+							<i class="bx bxs-quote-alt-right quote-icon-right"></i>
 						</p>
-						<img src="/resource/assets/img/anolde.JPG" class="testimonial-img"
+						<br>
+						<img src="/resource/assets/img/tip04.jpg" class="testimonial-img"
 							alt="">
-						<h3>Saul Goodman</h3>
-						<h4>Ceo &amp; Founder</h4>
+						<h3>Tip 1!</h3>
+						<h4>보충제 섭취</h4>
 					</div>
 
 					<div class="testimonial-item" data-aos="fade-up"
 						data-aos-delay="100">
 						<p>
-							<i class="bx bxs-quote-alt-left quote-icon-left"></i> Export
-							tempor illum tamen malis malis eram quae irure esse labore quem
-							cillum quid cillum eram malis quorum velit fore eram velit sunt
-							aliqua noster fugiat irure amet legam anim culpa. <i
-								class="bx bxs-quote-alt-right quote-icon-right"></i>
+							<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+							몸무게는 매일 아침 <br>
+							공복 상태에서 측정하고, <br>
+							1주일 동안 기록한 몸무게의 <br>
+							 평균이 실제 몸무게이다.<br>
+							 1주일 평균을 꼭 내볼 것!
+							<i class="bx bxs-quote-alt-right quote-icon-right"></i>
 						</p>
-						<img src="/resource/assets/img/anolde.JPG" class="testimonial-img"
+						<br>
+						<img src="/resource/assets/img/tip02.jpg" class="testimonial-img"
 							alt="">
-						<h3>Sara Wilsson</h3>
-						<h4>Designer</h4>
+						<h3>Tip 2!</h3>
+						<h4>정확한 몸무게 재기</h4>
 					</div>
 
 					<div class="testimonial-item" data-aos="fade-up"
 						data-aos-delay="200">
 						<p>
-							<i class="bx bxs-quote-alt-left quote-icon-left"></i> Enim nisi
-							quem export duis labore cillum quae magna enim sint quorum nulla
-							quem veniam duis minim tempor labore quem eram duis noster aute
-							amet eram fore quis sint minim. <i
-								class="bx bxs-quote-alt-right quote-icon-right"></i>
+							<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+							다이어트 시, 정말 배고프다면<br>
+							곤약젤리, 방울토마토, 냉동과일을 <br>
+							적당량 먹으면 허기가 <br> 조금은 해소된다. <br>
+							저칼로리 식품 이용할 것!
+							<i class="bx bxs-quote-alt-right quote-icon-right"></i>
 						</p>
-						<img src="/resource/assets/img/anolde.JPG" class="testimonial-img"
+						<br>
+						<img src="/resource/assets/img/tip03.jpg" class="testimonial-img"
 							alt="">
-						<h3>Jena Karlis</h3>
-						<h4>Store Owner</h4>
+						<h3>Tip 3!</h3>
+						<h4>허기질 때 해소법</h4>
 					</div>
 
 					<div class="testimonial-item" data-aos="fade-up"
 						data-aos-delay="300">
 						<p>
-							<i class="bx bxs-quote-alt-left quote-icon-left"></i> Fugiat enim
-							eram quae cillum dolore dolor amet nulla culpa multos export
-							minim fugiat minim velit minim dolor enim duis veniam ipsum anim
-							magna sunt elit fore quem dolore labore illum veniam. <i
-								class="bx bxs-quote-alt-right quote-icon-right"></i>
+							<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+							과학적으로 효과가 입증된<br>
+							보충제의 종류에는 <br>
+							멀티비타민, 오메가3, 비타민D3, <br>
+							크레아틴, 카페인이 있다. <br>
+							입증된 보충제를 이용하자!
+							<i class="bx bxs-quote-alt-right quote-icon-right"></i>
 						</p>
+						<br>
 						<img src="/resource/assets/img/anolde.JPG" class="testimonial-img"
 							alt="">
-						<h3>Matt Brandon</h3>
-						<h4>Freelancer</h4>
+						<h3>Tip 4!</h3>
+						<h4>보충제 추천</h4>
 					</div>
 
 					<div class="testimonial-item" data-aos="fade-up"
 						data-aos-delay="400">
 						<p>
-							<i class="bx bxs-quote-alt-left quote-icon-left"></i> Quis quorum
-							aliqua sint quem legam fore sunt eram irure aliqua veniam tempor
-							noster veniam enim culpa labore duis sunt culpa nulla illum
-							cillum fugiat legam esse veniam culpa fore nisi cillum quid. <i
-								class="bx bxs-quote-alt-right quote-icon-right"></i>
+							<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+							땅콩버터, 통밀빵은 최대한 <br>
+							설탕이 들어가지 않는 <br>
+							것을 고르는것이 좋다. <br>
+							정확한 칼로리 카운팅을 위해 <br>
+							주방용 전자저울을 사용한다.
+							<i class="bx bxs-quote-alt-right quote-icon-right"></i>
 						</p>
-						<img src="/resource/assets/img/anolde.JPG" class="testimonial-img"
+						<br>
+						<img src="/resource/assets/img/tip05.jpg" class="testimonial-img"
 							alt="">
-						<h3>John Larson</h3>
-						<h4>Entrepreneur</h4>
+						<h3>Tip 5!</h3>
+						<h4>추천식단 이용 시 주의점</h4>
 					</div>
 
 				</div>
 
 			</div>
 		</section>
-		<!-- End Testimonials Section -->
-
 	</main>
-	<!-- End #main -->
+<!-- 메인 페이지 화면, 운동 명언 끝 -->
 
-	<!-- ======= Footer ======= -->
+<!-- 왼쪽 하단 @Copyright Footer, 화면 작아질 시 하단에 로고 표시 -->
 	<footer id="footer">
 		<div class="container">
 			<div class="copyright">
 				&copy; Copyright <strong><span>DietHelper</span></strong>
 			</div>
-			<div class="credits">
-				<!-- All the links in the footer should remain intact. -->
-				<!-- You can delete the links only if you purchased the pro version. -->
-				<!-- Licensing information: https://bootstrapmade.com/license/ -->
-				<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-				Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-			</div>
 		</div>
 	</footer>
-	<!-- End  Footer -->
-
-	<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 	<!-- Vendor JS Files -->
 	<script
 		src="/resource/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script
-		src="/resource/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+	<script src="/resource/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
 	<script src="/resource/assets/vendor/php-email-form/validate.js"></script>
 	<script src="/resource/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
 	<script src="/resource/assets/vendor/counterup/counterup.min.js"></script>
-	<script
-		src="/resource/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="/resource/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 	<script src="/resource/assets/vendor/venobox/venobox.min.js"></script>
 	<script src="/resource/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 	<script src="/resource/assets/vendor/typed.js/typed.min.js"></script>

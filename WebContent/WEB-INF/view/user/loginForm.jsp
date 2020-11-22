@@ -27,7 +27,7 @@
 
 <!-- 로그인 창 왼쪽 상단 DietHelper 로고 네비게이션 바 -->
   <body class="align">
-	<!-- Navigation-->
+
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
 		id="mainNav">
 		<div class="container">
