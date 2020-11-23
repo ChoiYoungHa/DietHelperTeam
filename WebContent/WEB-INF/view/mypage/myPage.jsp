@@ -32,7 +32,6 @@
 <!-- 부트스트랩 css 사용 -->
 		<link rel="stylesheet" href="/resource/css/bootstrap.css">
 		<link rel="stylesheet" href="/resource/css/style.css">
-		<link rel="stylesheet" href="/resource/css/selectordie.css">
 
 </head>
 

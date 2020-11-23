@@ -114,8 +114,8 @@
 <!-- BodyCheck(신체 정보 측정)을 위한 신체정보 입력 테이블 -->
 			<form id="formvalue" method="post" action="/MetabolismPost.do" onsubmit="return InsertCheck()">
 				<div class="table table-dark">
-					<div class="row m-2 pt-3">
-						<div class="col-4 text-left">
+					<div class="row m-2 pt-3" style="font-size:18px;">
+						<div class="col-4 text-left mt-2">
 							<b>나이를 입력하세요 :</b>
 						</div>
 						<div class="col-8 text-right">
@@ -127,19 +127,19 @@
 					
 					<hr>
 					<div class="row m-2">
-						<div class="col-4 text-left">
+						<div class="col-4 text-left"  style="font-size:18px;">
 							<b>성별을 선택하세요 :</b>
 						</div>
 						<div class="col-8 text-right">
 							<label><input type="radio" name="sex" id="sex"
-								style="background-color: lightgray;" value="1" />&nbsp;남자&nbsp;</label>
+								style="background-color: lightgray;" value="1" style="font-size:20px;"/><b>&nbsp;남자&nbsp;</b></label>
 							<label><input type="radio" name="sex" id="sex"
-								style="background-color: lightgray;" value="2" />&nbsp;여자&nbsp;</label>
+								style="background-color: lightgray;" value="2" style="font-size:20px;"/><b>&nbsp;여자&nbsp;</b></label>
 						</div>
 					</div>
 					
 					<hr>
-					<div class="row m-2 ">
+					<div class="row m-2 "  style="font-size:18px;">
 						<div class="col-4 text-left">
 							<b>키를 입력하세요 :</b>
 						</div>
@@ -150,7 +150,7 @@
 					</div>
 					
 					<hr>
-					<div class="row m-2">
+					<div class="row m-2"  style="font-size:18px;">
 						<div class="col-4 text-left">
 							<b>몸무게를 입력하세요 :</b>
 						</div>
@@ -162,55 +162,55 @@
 					</div>
 					
 					<hr>
-					<div class="row m-2 pl-3 text-left">
+					<div class="row m-2 pl-3 text-left"  style="font-size:18px;">
 						<b>나의 활동량을 아래 5가지 중 체크해 주세요 :</b>
 					</div>
 					<hr>
-					<div class="row m-2 pl-3 text-left">
+					<div class="row m-2 pl-3 text-left"  style="font-size:18px;">
 						<label> <input type="radio" name="activity" value="1.2">
-							거의 없다.(거의 좌식 생활하고, 운동 안 함)
+							<b>거의 없다.</b> (거의 좌식 생활하고, 운동 안 함)
 						</label>
 					</div>
 					
 					<hr>
-					<div class="row m-2 pl-3 text-left">
+					<div class="row m-2 pl-3 text-left"  style="font-size:18px;">
 						<label> <input type="radio" name="activity" value="1.375">
-							조금 있다.(활동량이 보통이거나, 주에 1-3회 운동)
+							<b>조금 있다.</b> (활동량이 보통이거나, 주에 1-3회 운동)
 						</label>
 					</div>
 					<hr>
-					<div class="row m-2 pl-3 text-left">
+					<div class="row m-2 pl-3 text-left"  style="font-size:18px;">
 						<label> <input type="radio" name="activity" value="1.55">
-							보통이다.(활동량이 다소 많거나, 주에 3-5회 운동)
+							<b>보통이다.</b> (활동량이 다소 많거나, 주에 3-5회 운동)
 						</label>
 					</div>
 					
 					<hr>
-					<div class="row m-2 pl-3 text-left">
+					<div class="row m-2 pl-3 text-left"  style="font-size:18px;">
 						<label> <input type="radio" name="activity" value="1.725">
-							꽤 있다.(활동량이 많거나, 주에 6-7회 정도 운동)
+							<b>꽤 있다.</b> (활동량이 많거나, 주에 6-7회 정도 운동)
 						</label>
 					</div>
 					<hr>
-					<div class="row m-2 pl-3 text-left">
+					<div class="row m-2 pl-3 text-left"  style="font-size:18px;">
 						<label> <input type="radio" name="activity" value="1.9">
-							아주 많다.(활동량이 매우 많거나, 거의 매일 하루 2번 운동)
+							<b>아주 많다.</b> (활동량이 매우 많거나, 거의 매일 하루 2번 운동)
 						</label>
 					</div>
 					
 					<hr>
-					<div class="row m-2">
-						<div class="col-4 text-left">
+					<div class="row m-2"  style="font-size:18px;">
+						<div class="col-4 text-left mb-4">
 							<b>운동 목적을 선택하세요 :</b>
 						</div>
 						<div class="col-8 text-right">
 							<label><input type="radio" name="how_exer"
-								style="width: 30px" value="1" />체중 감량</label> 
+								style="width: 30px" value="1" /><b>체중 감량</b></label> 
 							<label><input
-								type="radio" name="how_exer" style="width: 30px" value="2" />체중
-								증량</label>
+								type="radio" name="how_exer" style="width: 30px" value="2" /><b>체중
+								증량</b></label>
 							<label><input type="radio" name="how_exer"
-								style="width: 30px" value="3" />체중 유지</label>
+								style="width: 30px" value="3" /><b>체중 유지</b></label>
 						</div>
 					</div>
 				</div>
