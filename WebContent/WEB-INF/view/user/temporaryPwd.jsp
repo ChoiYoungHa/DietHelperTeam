@@ -88,6 +88,7 @@
 					name="user_name" class="form__input" placeholder="&nbsp;이름을 입력하세요"
 					style="color: black; padding: 0px 0px 0px 12px" required>
 			</div>
+			<div id="alert-emailnmchk" style="display:none">이메일 혹은 성명이 일치하지 않습니다.</div>
 			
 <!-- 입력 완료 후 제출 혹은 다시 작성 -->
 				<div class="row">

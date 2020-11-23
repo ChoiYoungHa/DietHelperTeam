@@ -1,5 +1,5 @@
 //회원가입 정보의 유효성 체크하기 및 계산
-function InsertCheck(form) {
+function InsertCheck() {
 		if ($("#age").val() == "") {
 			alert("나이를 입력해주세요.");
 			$("#age").focus();

@@ -415,19 +415,26 @@ public class DietController {
 			log.info("임시비밀번호 문자 발송 END!!");
 			log.info("Temporary END!");
 			log.info( "####################################################");
-			return "/Diet/tmpRedirect";
+			
+			return "/redirect/tmpRedirect";
+			
 		} catch (Exception e) {
 			msg = "실패하였습니다. : " + e.toString();
+			url = "/";
 			log.info(e.toString());
 			e.printStackTrace();
+			
+			model.addAttribute("msg", msg);
+			model.addAttribute("url", url);
+			
 		}	finally {
-			log.info("임시비밀번호 발급 완료!");
 			//변수와 메모리 초기화
 			msg = "";
 			url = "";
 			mDTO = null;
 			pDTO = null;
 		}
+		
 		log.info("임시비밀번호 문자 발송 [ERROR] END!!");
 		log.info("Temporary END!");
 		log.info( "####################################################");

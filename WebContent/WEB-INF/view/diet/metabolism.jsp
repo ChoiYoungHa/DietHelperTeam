@@ -221,8 +221,7 @@
 				<input type="hidden" name="goal_kcal" id="goal_kcal" value="1"/>
 				<div class="row">
 				<div class="col-6">
-					<input type="button" class="btn btn-success" onclick="submit()"
-						value="입력" style="width: 400px; height: 70px;">
+					<input type="submit" class="btn btn-success" value="입력" style="width: 400px; height: 70px;">
 				</div>
 				<div class="col-6">
 					<input type="reset" class="btn btn-danger" value="다시 작성"
@@ -230,7 +229,6 @@
 				</div>
 				</div>
 				<br>
-				<a href="javascript:window.history.back();">뒤로가기</a>
 
 			</form>
 
