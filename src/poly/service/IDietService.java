@@ -1,7 +1,10 @@
 package poly.service;
 
+import java.util.List;
+
 import poly.dto.DietDTO;
 import poly.dto.FoodDTO;
+import poly.dto.MapDTO;
 
 public interface IDietService {
 	//로그인
@@ -28,5 +31,8 @@ public interface IDietService {
 	DietDTO getGoalKcal(DietDTO pDTO);
 	//음식 설정
 	FoodDTO getbf_food(FoodDTO fDTO);
+	
+	List<MapDTO> DietMap(MapDTO pDTO) throws Exception;
+
 
 }

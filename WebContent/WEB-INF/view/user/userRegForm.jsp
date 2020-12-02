@@ -71,18 +71,19 @@
 
 			<div class="form__field">
 				<label for="email"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden"></span></label> 
-				<input id="email" type="email" name="email" class="form__input" placeholder="이메일을 입력하세요" style="padding: 0px 0px 0px 12px; color: black;" onfocusout="EmailChk()">
+				<input id="email" type="email" name="email" class="form__input" placeholder="이메일을 입력하세요" style="padding: 0px 0px 0px 12px; color: black;" onfocusout="EmailChk()" autocomplete="off">
 			</div>
 
 			<div class="form__field">
 				<label for="username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden"></span></label> 
-				<input id="name" type="text" name="user_name" size="6" class="form__input" placeholder="&nbsp;이름을 입력하세요" >
+				<input id="name" type="text" name="user_name" size="6" class="form__input" placeholder="&nbsp;이름을 입력하세요" autocomplete="off">
 			</div>
 
 			<div class="form__field">
 				<label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label> 
 				<input id="password_1" type="password" name="password" size="15" class="form__input" placeholder="&nbsp; 영문, 숫자, 특수문자 포함 비밀번호" >
 			</div>
+			<div  class="alert alert-danger" id="alert-check">영문,숫자,특수문자를 포함한 12~20자로 설정해주세요.</div>
 
 			<div class="form__field">
 				<label for="login__password1"><svg class="icon"> <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label> 
@@ -99,8 +100,18 @@
 
 			<div class="form__field">
 				<label for="login__password1"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden"></span></label> 
-				<input id="login__password" type="text" name="user_an" class="form__input" placeholder="&nbsp;닉네임을 입력하세요" >
+				<input id="login__password" type="text" name="user_an" class="form__input" placeholder="&nbsp;닉네임을 입력하세요" autocomplete="off">
 			</div>
+			
+			<div class="form__field"> 
+				 <input type="text" id="sample2_postcode" placeholder="우편번호" autocomplete="off">
+				 <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기" class="btn btn-primary disabled" required="required" >
+			</div>
+			
+			<div class="form__field">
+                 <input type="text" class="form-control form-control-user" name="addr" id="addr" placeholder="주소를 등록해 주세요." required="required" autocomplete="off">
+            </div> 
+
 
 <!-- 입력 완료 후 분홍색 회원가입 버튼을 눌러 유효성 체크에 이상 없을 시, 회원가입 -->
 			<div class="form__field">
@@ -124,5 +135,23 @@
 <!-- 부트스트랩 js 사용 -->
 	<script type="text/javascript" src="/resource/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/resource/js/bootstrap.min.js"></script>
+
+ <!--  다음 주소 API -->
+   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+   
+   <div id="layer"
+      style="display: none; position: fixed; overflow: hidden; z-index: 1; -webkit-overflow-scrolling: touch;">
+     
+      <img src="//t1.daumcdn.net/postcode/resource/images/close.png"
+         id="btnCloseLayer"
+         style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1"
+         onclick="closeDaumPostcode()" alt="닫기 버튼">
+         
+   </div>
+   
+   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+	<script type="text/javascript" src="/resources/js/daumAPI.js"></script>
+
 </body>
 </html>

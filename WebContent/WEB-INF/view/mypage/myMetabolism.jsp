@@ -55,7 +55,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#" style="color:#778899;"><b>Diet
+						href="/MainPage.do" style="color:#778899;"><b>Diet
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>&nbsp;
 						Helper</b></a></li>
 				</ul>
@@ -90,6 +90,24 @@
 						<span>나의 프로필</span></a></li>
 				<li><a href="/MyFoodList.do"><i class="bx bx-book-content"></i>나의
 						식단</a></li>
+				<li><a href="#healthwise"><i class="bx bx-server"></i>다이어트
+						팁</a></li>
+				<li><a href="javascript:window.history.back();"><i class="bx bx-server"></i>뒤로가기</a></li>
+						
+			</ul>
+		</nav>
+	</header><!-- 메뉴바의 메뉴 네비게이션 -->
+		<nav class="nav-menu">
+			<ul>
+				<li class="active"><a href="/MainPage.do"><i
+						class="bx bx-home"></i> <span>메인 페이지</span></a></li>
+				<li><a href="/MyPage.do"><i class="bx bx-user"></i> <span>회원
+							정보</span></a></li>
+				<li><a href="/Diet/MyMetabolism.do"><i class="bx bx-file-blank"></i>
+						<span>나의 프로필</span></a></li>
+				<li><a href="/MyFoodList.do"><i class="bx bx-book-content"></i>나의
+						식단</a></li>
+				<li><a href="/map.do"><i class="bx bx-book-content"></i>집주변 체육시설</a></li>		
 				<li><a href="#healthwise"><i class="bx bx-server"></i>다이어트
 						팁</a></li>
 				<li><a href="javascript:window.history.back();"><i class="bx bx-server"></i>뒤로가기</a></li>
@@ -151,7 +169,7 @@
 			
 				<div class="row">
 				<div class="col-6">
-					<input type="button" class="btn btn-info" onclick="location.href='/Metabolism.do'" value="프로필 설정하기" style="width:240px;height: 70px; margin:5px 0px 0px 0px;">
+					<input type="button" class="btn btn-info" onclick="location.href='/Metabolism.do'" value="프로필 설정하기" style="width:230px;height: 70px; margin:5px 0px 0px 5px;">
 				</div>
 				<div class="col-6">
 					<input type="button" class="btn btn-success" onclick="location.href='/MyFoodList.do'" value="음식 추천받기"

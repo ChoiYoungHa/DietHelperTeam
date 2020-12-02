@@ -1,16 +1,18 @@
+<%@page import="poly.util.CmmUtil"%>
 <%@page import="static poly.util.CmmUtil.nvl"%>
 <%@page import="poly.dto.FoodDTO"%>
 <%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="poly.util.Getapi"%>
+<%//@/page import="poly.util.Getapi"%>
 <%@page import="poly.dto.DietDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
     
     <%
     FoodDTO bkDTO = (FoodDTO)request.getAttribute("bkDTO");
+    String goal_kcal = CmmUtil.nvl((String)request.getAttribute("goal_kcal"));
     %>
 <html>
 <head>
@@ -85,7 +87,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#" style="color:#778899;"><b>Diet
+						href="/MainPage.do" style="color:#778899;"><b>Diet
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>&nbsp;
 						Helper</b></a></li>
 				</ul>
@@ -120,6 +122,7 @@
 						<span>나의 프로필</span></a></li>
 				<li><a href="/MyFoodList.do"><i class="bx bx-book-content"></i>나의
 						식단</a></li>
+				<li><a href="/map.do"><i class="bx bx-book-content"></i>집주변 체육시설</a></li>		
 				<li><a href="#healthwise"><i class="bx bx-server"></i>다이어트
 						팁</a></li>
 				<li><a href="javascript:window.history.back();"><i class="bx bx-server"></i>뒤로가기</a></li>
@@ -138,35 +141,14 @@
 <!-- 나의 식단 추천 메뉴 테이블, 유지칼로리와 식단 선택에 따라서 알맞은 음식의 양을 정해 추천 -->	
 		<div class="container">
 			<div class="container-fluid">
-			
-			<!-- 다이어트 주차에 따른 칼로리 조정을 위해 주차 선택 -->
-			<div class="row">
-			<div class="col-4" style="padding:100px 0px 0px 0px;"></div>
-			<div class="col-4"></div>
-			<div class="col-4 text-center" style="font-color:white; font-size:1.3em;">
-			<select name="item2" class="custom-select"
-						style="width: 290px; background-color:lightskyblue; color:black;">
-						<option value="1">1주차</option>
-						<option value="2">2주차</option>
-						<option value="3">3주차</option>
-						<option value="4">4주차</option>
-						<option value="5">5주차</option>
-						<option value="6">6주차</option>
-						<option value="7">7주차</option>
-						<option value="8">8주차</option>
-
-					</select>
-								<br><b>다이어트 몇주차 인가요?</b>
-			</div>
-			
-			</div>
+		
 				
 			<h1 style="color:lightgray;text-align:center;font-size:3.0em;">
 			<b><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>&nbsp;나의 식단&nbsp;</b><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
 			</h1>
 			
 			<h1 style="color:pink;text-align:center;font-size:2.0em;">
-			<%=(String)session.getAttribute("user_an")%>님의 목표 칼로리는 입니다.
+			<%=(String)session.getAttribute("user_an")%>님의 목표 칼로리는 <%=goal_kcal%>Kcal 입니다.
 			</h1>
 			
 			<br>

@@ -3,6 +3,7 @@ package poly.persistance.mapper;
 import config.Mapper;
 import poly.dto.DietDTO;
 import poly.dto.FoodDTO;
+import poly.dto.MapDTO;
 
 @Mapper("DietMapper")
 public interface IDietMapper {
@@ -48,4 +49,7 @@ public interface IDietMapper {
 	FoodDTO gethyunsae();
 	// 듀럼밀면, 닭안심, 바질페스토 
 	FoodDTO getdudack();
+	
+	//동주소가져오기
+	MapDTO getaddr(MapDTO pDTO);
 }

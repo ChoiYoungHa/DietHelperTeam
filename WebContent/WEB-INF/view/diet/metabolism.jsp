@@ -51,7 +51,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#" style="color:#778899;"><b>Diet
+						href="/MainPage.do" style="color:#778899;"><b>Diet
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"> <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>&nbsp;
 						Helper</b></a></li>
 				</ul>
@@ -85,6 +85,7 @@
 						<span>나의 프로필</span></a></li>
 				<li><a href="/MyFoodList.do"><i class="bx bx-book-content"></i>나의
 						식단</a></li>
+				<li><a href="/map.do"><i class="bx bx-book-content"></i>집주변 체육시설</a></li>		
 				<li><a href="#healthwise"><i class="bx bx-server"></i>다이어트
 						팁</a></li>
 				<li><a href="javascript:window.history.back();"><i class="bx bx-server"></i>뒤로가기</a></li>

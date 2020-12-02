@@ -1,12 +1,22 @@
 package poly.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import poly.dto.DietDTO;
 import poly.dto.FoodDTO;
+import poly.dto.MapDTO;
 import poly.persistance.mapper.IDietMapper;
 import poly.service.IDietService;
 import poly.util.CmmUtil;
@@ -121,17 +131,20 @@ public class DietService implements IDietService {
 		float today_fat = pDTO.getToday_fat();
 		float ftoday_kcal = pDTO.getToday_kcal();
 		int itoday_kcal = (int)ftoday_kcal;
+		// 소수점 제거를 위한 정수 형변환
+		int igoal_kcal = Integer.parseInt(pDTO.getGoal_kcal());
+		// DTO전달 및 HashMap 전달을 위한 String 변환
+		String goal_kcal = Integer.toString(igoal_kcal);
 		
 		String today_kcal = Integer.toString(itoday_kcal);
-		
 		log.info("today_tan : " + today_tan);
 		log.info("today_protein : " + today_protein);
 		log.info("today_fat : " + today_fat);
 		log.info("today : " + today_kcal);
 		
-		//jsp에 표시할 한끼 칼로리에 표시할 한끼 칼로리
+		//jsp에 표시할 한끼 칼로리에 표시할 한끼 칼로리, 목표칼로리
 		rDTO.setToday_kcal(today_kcal);
-
+		rDTO.setGoal_kcal(goal_kcal);
 		
 		if(bf_food.equals("고닭아") || lf_food.equals("고닭아") || df_food.equals("고닭아")) { 
 	
@@ -520,6 +533,101 @@ public class DietService implements IDietService {
 		return rDTO;
 	}
 	
+    // tag값의 정보를 가져오는 메소드
+	private static String getTagValue(String tag, Element eElement) {
+	    NodeList nlList = eElement.getElementsByTagName(tag).item(0).getChildNodes();
+	    Node nValue = (Node) nlList.item(0);
+	    if(nValue == null) 
+	        return null;
+	    return nValue.getNodeValue();
+	}
 	
+	@Override
+	public List<MapDTO> DietMap(MapDTO pDTO) throws Exception{
+		List<MapDTO> rlist = new ArrayList<MapDTO>();
+		
+		MapDTO rDTO = new MapDTO();
+		//로그인 유저의 정보 기본키를 가져온뒤 해당유저의 회원가입할때 받은 동주소를 가져온다
+		rDTO = DietMapper.getaddr(pDTO);
+		
+		String emdNm = rDTO.getAddr2();
+		rDTO = null;
+		
+        log.info("service user_no : "+pDTO.getUser_no());
+        log.info("emdNm : "+emdNm);
+		
+        int page = 1;	// 페이지 초기값 
+		int check = 0; //10개만 찍기
+		
+		try{
+			while(true){
+				log.info("while START");
+				// parsing할 url 지정(API 키 포함해서)
+				String url =  "http://openapi.seoul.go.kr:8088/465354437532636834325a7048424c/xml/TbPublicSptCenter2019/"+page+"/100/";
+				
+				log.info("1");
+				
+				DocumentBuilderFactory dbFactoty = DocumentBuilderFactory.newInstance();
+				
+				DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
+				
+				Document doc = dBuilder.parse(url);
+				log.info("2");
+				// root tag 
+				doc.getDocumentElement().normalize();
+				log.info("Root element :" + doc.getDocumentElement().getNodeName());
+				
+				// 파싱할 tag
+				NodeList nList = doc.getElementsByTagName("row");
+				log.info("파싱할 리스트 수 : "+ nList.getLength());
+				
+				for(int temp = 0; temp < nList.getLength(); temp++){
+					Node nNode = nList.item(temp);
+					
+					if(nNode.getNodeType() == Node.ELEMENT_NODE){
+					
+						Element eElement = (Element) nNode;
+						
+						if(emdNm.equals(getTagValue("GU_NM", eElement))) {
+							
+							rDTO = new MapDTO();
+							
+							log.info("######################");
+							//System.out.println(eElement.getTextContent());
+							log.info("시설명  : " + getTagValue("NM", eElement)); 
+							log.info("경도  : " + getTagValue("XCODE", eElement));
+							log.info("위도 : " + getTagValue("YCODE", eElement));
+							log.info("######################");
+							
+							rDTO.setMap_name(getTagValue("NM", eElement));
+							rDTO.setMap_pointx(getTagValue("XCODE", eElement));
+							rDTO.setMap_pointy(getTagValue("YCODE", eElement));
+						
+							rlist.add(rDTO);
+							check++;
+							rDTO = null;
+						
+						}
+					}
+				}
+				
+				page += 1;
+				
+				log.info("page number : "+page);
+				log.info("check number : "+check);
+				
+				if(check > 5){	
+					break;
+					
+				}
+			}	// while end
+			
+			rDTO = null;
+		} catch (Exception e){	
+			e.printStackTrace();
+		}
+		return rlist;
+	}
+
 
 }

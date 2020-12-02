@@ -6,6 +6,8 @@ public class DietDTO {
 	private String password; //비밀번호
 	private String user_an; //닉네임
 	private String user_name;  //이름
+	private String addr;  //거주하는 주소
+	private String addr2;  //주소 참고항목(동 등)
 	
 	//food_info
 	private String food_name; //음식이름
@@ -53,6 +55,19 @@ public class DietDTO {
 	
 	
 	
+	
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
 	public float getToday_kcal() {
 		return today_kcal;
 	}

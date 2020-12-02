@@ -34,6 +34,8 @@
 			PASSWORD,
 			USER_AN,
 			USER_NAME,
+			ADDR,
+			ADDR2,
 			REG_ID,
 			CHD_ID
 		)
@@ -43,6 +45,8 @@
 			#{password},
 			#{user_an},
 			#{user_name},
+			#{addr},
+			#{addr2},
 			#{user_name},
 			#{user_name}
 		)
@@ -112,6 +116,7 @@
 			BASIC=#{basic},
 			KEEP_KCAL=#{keep_kcal},
 			GOAL_KCAL=#{goal_kcal},
+			BACK_GOAL_KCAL=#{goal_kcal},
 			CHD_ID=(SELECT USER_NAME FROM USER_INFO
 			WHERE USER_NO = #{user_no})
 		WHERE
@@ -164,6 +169,16 @@
 		GOAL_KCAL
 	FROM
 		BODY_INFO
+	WHERE
+		USER_NO = ${user_no}
+	</select>
+	
+	<!-- 동주소 가져오기 -->
+	<select id="getaddr" parameterType="MapDTO" resultType="MapDTO">
+	SELECT
+		ADDR2
+	FROM
+		USER_INFO
 	WHERE
 		USER_NO = ${user_no}
 	</select>
@@ -311,4 +326,5 @@
 	WHERE
 		FOOD_NO = 8
 	</select>
+	
 </mapper>

@@ -31,6 +31,7 @@ public class GoalKcal {
 		log.info("지방 비율 20% : " + today_fat);
 		
 		//한끼 탄수화물, 단백질, 지방, 칼로리 세팅
+		pDTO.setGoal_kcal(goal_kcal);
 		pDTO.setToday_tan(today_tan);
 		pDTO.setToday_protein(today_protein);
 		pDTO.setToday_fat(today_fat);

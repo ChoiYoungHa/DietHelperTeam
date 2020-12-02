@@ -43,10 +43,16 @@ public class FoodDTO {
 	private float today_protein;
 	private float today_fat;
 	private String today_kcal;
+	private String goal_kcal;
 	
 	
-	
-	
+
+	public String getGoal_kcal() {
+		return goal_kcal;
+	}
+	public void setGoal_kcal(String goal_kcal) {
+		this.goal_kcal = goal_kcal;
+	}
 	public String getToday_kcal() {
 		return today_kcal;
 	}
