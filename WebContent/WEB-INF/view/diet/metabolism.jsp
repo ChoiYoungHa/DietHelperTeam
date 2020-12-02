@@ -22,6 +22,7 @@
 	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
+<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
 <link href="/resource/assets/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="/resource/assets/vendor/icofont/icofont.min.css"
@@ -38,6 +39,12 @@
 <!-- 부트스트랩 css 사용 -->
 <link rel="stylesheet" href="/resource/css/bootstrap.css">
 <link rel="stylesheet" href="/resource/css/style.css">
+
+<style>
+.row {
+font-family:Nanum Gothic; font-weight:700;
+}
+</style>
 
 </head>
 
@@ -122,7 +129,7 @@
 						<div class="col-8 text-right">
 							<input type="text" name="age" id="age"
 								style="width: 100px; background-color: #ffed91; border: 1px solid #ffed91;" />
-								세
+								<b>세</b>
 						</div>
 					</div>
 					
@@ -131,11 +138,11 @@
 						<div class="col-4 text-left"  style="font-size:18px;">
 							<b>성별을 선택하세요 :</b>
 						</div>
-						<div class="col-8 text-right">
+						<div class="col-8 text-right" style="font-size:18px;">
 							<label><input type="radio" name="sex" id="sex"
-								style="background-color: lightgray;" value="1" style="font-size:20px;"/><b>&nbsp;남자&nbsp;</b></label>
+								style="background-color: lightgray;" value="1" /><b>&nbsp;남자&nbsp;</b></label>
 							<label><input type="radio" name="sex" id="sex"
-								style="background-color: lightgray;" value="2" style="font-size:20px;"/><b>&nbsp;여자&nbsp;</b></label>
+								style="background-color: lightgray;" value="2" /><b>&nbsp;여자&nbsp;</b></label>
 						</div>
 					</div>
 					
@@ -146,7 +153,7 @@
 						</div>
 						<div class="col-8 text-right">
 							<input type="text" name="tall" id="tall"
-								style="width: 100px; background-color: #ffed91; border: 1px solid #ffed91;" />cm
+								style="width: 100px; background-color: #ffed91; border: 1px solid #ffed91;" /><b>cm</b>
 						</div>
 					</div>
 					
@@ -158,7 +165,7 @@
 						<div class="col-8 text-right">
 							<input type="text" name="weight" id="weight"
 								style="width: 100px; background-color: #ffed91; border: 1px solid #ffed91;" />
-							kg
+							<b>kg</b>
 						</div>
 					</div>
 					

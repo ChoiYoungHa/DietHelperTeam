@@ -39,7 +39,9 @@
 	<link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
 	rel="stylesheet">
-
+	<link href='http://fonts.googleapis.com/earlyaccess/hanna.css' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
+	
 <!-- Table Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Varela+Round"
 	rel="stylesheet" />
@@ -76,6 +78,12 @@
 	<link rel="stylesheet" type="text/css" href="resource/css/icons.css" />
 	<link rel="stylesheet" type="text/css" href="resource/css/component.css" />
 
+<style>
+.row {
+font-family:Hanna; letter-spacing:3px;
+}
+
+</style>
 	</head>
 	<body>
 
@@ -165,7 +173,7 @@
 			<option value="현돼스">현미밥, 돼지안심, 스트링치즈</option>
 			<option value="듀새바">듀럼밀면, 새우, 바질페스토</option>
 			</select>
-			<input type="button" name="bf" id="bf" value="아침 선택 (Click Me!)" style="background-color:#1a1a3a;color:yellow;font-weight:bold;padding:5px;width:100%;">
+			<input type="button" name="bf" id="bf" value="아침 선택 (Click !)" style="background-color:#1a1a3a;letter-spacing:2px;color:yellow;font-weight:bold;padding:5px;width:100%;">
 				</div>
 				
 				<div class="col-4">
@@ -179,7 +187,7 @@
 				<option value="현돼스">현미밥, 돼지안심, 스트링치즈</option>
 				<option value="듀새바">듀럼밀면, 새우, 바질페스토</option>
 			</select>
-				<input type="button" name="lf" id="lf" value="점심 선택 (Click Me!)" style="background-color:#1a1a3a;color:yellow;font-weight:bold;padding:5px;width:100%;">
+				<input type="button" name="lf" id="lf" value="점심 선택 (Click !)" style="background-color:#1a1a3a;letter-spacing:2px;color:yellow;font-weight:bold;padding:5px;width:100%;">
 				</div>
 				
 				<div class="col-4">
@@ -194,14 +202,14 @@
 				<option value="듀새바">듀럼밀면, 새우, 바질페스토</option>
 			</select>
 				<div style="margin:auto;width:50%;">
-				<input type="button" name="df" id="df" value="저녁 선택 (Click Me!)" style="background-color:#1a1a3a;color:yellow;font-weight:bold;padding:5px;width:100%;">
+				<input type="button" name="df" id="df" value="저녁 선택 (Click !)" style="background-color:#1a1a3a;letter-spacing:2px;color:yellow;font-weight:bold;padding:5px;width:100%;">
 				</div>
 				</div>
 			</div>
 				
 			<div class="row" style="font-size:1.5em; color:lightskyblue;">
 			<div class="col-4 text-center">
-				<p style="color:hotpink;"><b>나의 아침 메뉴 </b></p>
+				<p style="color:hotpink; font-family:Hanna; letter-spacing:3px;"><b>나의 아침 메뉴 </b></p>
 				<div id="bf_kcal" style="color:lightgray;"></div>
 				<br>
 				<div id="bf_tan">메뉴를 선택해주세요.</div>
@@ -210,7 +218,7 @@
 			</div>
 			
 			<div class="col-4 text-center">
-				<p style="color:hotpink;"><b>나의 점심 메뉴</b></p>
+				<p style="color:hotpink;font-family:Hanna; letter-spacing:3px;"><b>나의 점심 메뉴</b></p>
 				<div id="lf_kcal" style="color:lightgray;"></div>
 				<br>
 					<div id="lf_tan">메뉴를 선택해주세요.</div>
@@ -219,7 +227,7 @@
 			</div>
 
 			<div class="col-4 text-center">
-				<p style="color:hotpink;"><b>나의 저녁 메뉴</b></p>
+				<p style="color:hotpink;font-family:Hanna; letter-spacing:3px;"><b>나의 저녁 메뉴</b></p>
 				<div id="df_kcal" style="color:lightgray;"></div>
 				<br>
 				<div id="df_tan">메뉴를 선택해주세요.</div>
@@ -235,7 +243,7 @@
 		<div class="col-4"></div>
 		<div class="col-4">
 		<button type="button" class="btn btn-warning" onclick="location.href='Metabolism.do'"
-		style="color:navy;font-weight:bold;padding:5px;width:100%;height:50px;">프로필 다시 설정</button>
+		style="color:navy;font-weight:bold;padding:5px;width:100%;height:50px;font-family:Nanum Gothic;">프로필 다시 설정</button>
 		</div>
 		<div class="col-4"></div>
 		</div>
@@ -356,7 +364,7 @@
 <!-- 왼쪽 하단 @Copyright Footer, 화면 작아질 시 하단에 로고 표시 -->
 	<footer id="footer">
 		<div class="container">
-			<div class="copyright">
+			<div class="copyright" style="font-family:Nanum Gothic;">
 				&copy; Copyright <strong><span>DietHelper</span></strong>
 			</div>
 		</div>

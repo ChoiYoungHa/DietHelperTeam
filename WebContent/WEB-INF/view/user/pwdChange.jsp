@@ -17,6 +17,7 @@
 <link href="/resource/assets/img/healthlogo.JPG" rel="icon">
 
 <!-- 로고 사용 폰트 -->
+<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
 <link
 	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
 	rel="stylesheet">
@@ -112,16 +113,16 @@
 					<br>
 				</div>
 
-			<div class="hero-container">
+			<div class="hero-container" >
 				<form action="/pwdchgPost.do" method="post" id="PwdForm" onsubmit="return InsertCheck()">
-					<div class="table table-dark">
+					<div class="table table-dark" style="font:11px Nanum Gothic, font-weight:400;font-size:1.2em;color:black;background-color:#ffc838;">
 						<div class="row m-1 pt-5 pb-5">
-							<div class="col-5 text-center" style="font-family:Courier; font-size: 1.3em;color:lightgray;">
+							<div class="col-5 text-center" style="font:11px Nanum Gothic, font-weight:400;font-size:1.2em;color:black;">
 								<b>현재 비밀번호</b>
 							</div>
 							<div class="col-7 text-right">
 								<input type="password" name="originpwd" id="originpwd" onfocusout="PwdCheck()" placeholder="현재 비밀번호"
-									style="height:30px;width: 200px; background-color: #343a40; color: lightgray; padding: 0px 0px 0px 5px;" />
+									style="height:30px;width: 200px; border:#d9a600; background-color:#ffc838; color:black; padding: 0px 0px 0px 5px;" />
 								<div id="originpwd-insert" class="alert alert-dark">현재
 									비밀번호을 입력해주세요</div>
 								<div id="originpwd-success" class="alert alert-success">
@@ -133,13 +134,13 @@
 						
 						
 						<div class="row m-1 pt-3 pb-5">
-							<div class="col-5 text-center" style="font-family:Courier;font-size: 1.3em;color:lightgray;">
+							<div class="col-5 text-center" style="font:11px Nanum Gothic, font-weight:400;font-size:1.2em;color:black;">
 								<b>바꿀 비밀번호</b>
 							</div>
 							<div class="col-7 text-right">
 								<input type="password" name="password" id="password_1"
 									placeholder="변경할 비밀번호"
-									style="height:30px;width: 200px; color: black; background-color:#343a40; color:lightgray; padding: 0px 0px 0px 5px;" />
+									style="height:30px;width: 200px;  border:#d9a600; color: black; background-color:#ffc838; color:black; padding: 0px 0px 0px 5px;" />
 								<div id="alert-check" class="alert alert-danger">영문,숫자,특수문자를
 									포함한 12~20자로 설정해주세요.</div>
 							</div>
@@ -148,13 +149,13 @@
 						
 
 						<div class="row m-1 pt-3 pb-5">
-							<div class="col-5 text-center" style="font-family:Courier;font-size: 1.3em;color:lightgray;">
-								<b>바꿀 비번확인</b>
+							<div class="col-5 text-center" style="font:11px Nanum Gothic, font-weight:400;font-size:1.2em;color:black;">
+								<b>비밀번호 확인</b>
 		 					</div>
 							<div class="col-7 text-right">
 								<input type="password" name="password" id="password_2" 
 									placeholder="변경할 비밀번호 확인"
-									style="height:30px;width: 200px; color: black; background-color: #343a40; color:lightgray; padding: 0px 0px 0px 5px;" />
+									style="height:30px;width: 200px;  border:#d9a600;background-color:#ffc838; color:black; padding: 0px 0px 0px 5px;" />
 								<div id="alert-insert" class="alert alert-dark">비밀번호 확인을 입력해주세요</div>
 								<div id="alert-success" class="alert alert-success">비밀번호가 일치합니다.</div>
 								<div id="alert-danger" class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>

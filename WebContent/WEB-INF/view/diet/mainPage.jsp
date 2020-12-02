@@ -122,7 +122,7 @@
 				<h1>
 					<button type="button" onclick="location.href='/MyFoodList.do'"
 					class="btn btn-success btn-lg btn-block" style="height: 80px;">
-					나의 식단 리스트</button>
+					<b>나의 식단 리스트</b></button>
 					</h1>
 				</div>
 			</section>

@@ -26,6 +26,7 @@
 	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
+<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
 <link href="/resource/assets/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="/resource/assets/vendor/icofont/icofont.min.css"
@@ -43,6 +44,11 @@
 <link rel="stylesheet" href="/resource/css/bootstrap.css">
 <link rel="stylesheet" href="/resource/css/style.css">
 
+<style>
+.row {
+font-family:Nanum Gothic; font-weight:700;
+}
+</style>
 </head>
 
 <body>
@@ -122,26 +128,26 @@
 					<div class="row pt-3">
 					<div class="col-2">
 					</div>
-						<div class="col-8 text-center" style="font-family:Arial;font-size:1.2em;">
-						나이  : <b><%=rDTO.getAge()%> 세</b>
+						<div class="col-8 text-center" style="font:11px Nanum Gothic, font-weight:400;font-size:1.2em;color:black;">
+						<b>나이  : <%=rDTO.getAge()%> 세</b>
 						<br>
 						<hr>
-						성별  : <b><%=rDTO.getSex()%></b>
+						<b>성별  : <%=rDTO.getSex()%></b>
 						<br>
 						<hr>
-						키  : <b><%=rDTO.getTall()%> cm</b>
+						<b>키  : <%=rDTO.getTall()%> cm</b>
 						<br>
 						<hr>
-						몸무게  : <b><%=rDTO.getWeight()%> kg</b>
+						<b>몸무게  : <%=rDTO.getWeight()%> kg</b>
 						<br>
 						<hr>
-						기초 대사량  : <b><%=rDTO.getBasic()%> Kcal</b>
+						<b>기초 대사량  : <%=rDTO.getBasic()%> Kcal</b>
 						<br>
 						<hr>
-						유지 칼로리  : <b><%=rDTO.getKeep_kcal()%> Kcal</b>
+						<b>유지 칼로리  : <%=rDTO.getKeep_kcal()%> Kcal</b>
 						<br>
 						<hr>
-						목표 칼로리  :  <b><%=rDTO.getGoal_kcal()%> Kcal</b>
+						<b>목표 칼로리  : <%=rDTO.getGoal_kcal()%> Kcal</b>
 						<br>
 						<br>
 						</div>
@@ -152,7 +158,7 @@
 			
 				<div class="row">
 				<div class="col-6">
-					<input type="button" class="btn btn-info" onclick="location.href='/Metabolism.do'" value="프로필 설정하기" style="width:230px;height: 70px; margin:5px 0px 0px 5px;">
+					<input type="button" class="btn btn-info" onclick="location.href='/Metabolism.do'" value="프로필 설정하기" style="width:230px;height: 70px; margin:5px 0px 0px 10px;">
 				</div>
 				<div class="col-6">
 					<input type="button" class="btn btn-success" onclick="location.href='/MyFoodList.do'" value="음식 추천받기"

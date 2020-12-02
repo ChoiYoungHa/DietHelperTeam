@@ -105,7 +105,7 @@
       <h1><button type="button" onclick="location.href='/MyFoodList.do'" class="btn btn-success btn-lg btn-block" style="width:500px;">나의 식단 리스트</button></h1>
 	<br>
 	<br>
-	<h1><button type="button" onclick="location.href='/Metabolism.do'" class="btn btn-warning btn-lg btn-block">프로필 다시 측정</button></h1>
+	<h1><button type="button" onclick="location.href='/Metabolism.do'" class="btn btn-warning btn-lg btn-block"><b>프로필 다시 측정</b></button></h1>
     </div>
  
   </section>
