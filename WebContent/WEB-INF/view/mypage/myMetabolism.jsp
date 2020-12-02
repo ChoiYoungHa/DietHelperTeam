@@ -78,25 +78,8 @@
 					<a style="color:pink;" href="/Logout.do"><b>로그아웃</b></a></div>
         </div>
       </div>
-
-<!-- 메뉴바의 메뉴 네비게이션 -->
-		<nav class="nav-menu">
-			<ul>
-				<li class="active"><a href="/MainPage.do"><i
-						class="bx bx-home"></i> <span>메인 페이지</span></a></li>
-				<li><a href="/MyPage.do"><i class="bx bx-user"></i> <span>회원
-							정보</span></a></li>
-				<li><a href="/Diet/MyMetabolism.do"><i class="bx bx-file-blank"></i>
-						<span>나의 프로필</span></a></li>
-				<li><a href="/MyFoodList.do"><i class="bx bx-book-content"></i>나의
-						식단</a></li>
-				<li><a href="#healthwise"><i class="bx bx-server"></i>다이어트
-						팁</a></li>
-				<li><a href="javascript:window.history.back();"><i class="bx bx-server"></i>뒤로가기</a></li>
-						
-			</ul>
-		</nav>
-	</header><!-- 메뉴바의 메뉴 네비게이션 -->
+			
+		<!-- 메뉴바의 메뉴 네비게이션 -->
 		<nav class="nav-menu">
 			<ul>
 				<li class="active"><a href="/MainPage.do"><i
