@@ -25,75 +25,23 @@ import poly.util.GoalKcal;
 @Service("DietService")
 public class DietService implements IDietService {
 	@Resource(name="DietMapper")
-	IDietMapper DietMapper;
+	private IDietMapper DietMapper;
 	
 	private Logger log = Logger.getLogger(this.getClass());
 	
-	//로그인
-	@Override
-	public DietDTO loginPost(DietDTO pDTO) {
-		return DietMapper.loginPost(pDTO);
-	}
 	
-	//회원가입
-	@Override
-	public int insertMember(DietDTO pDTO) {	
-		return DietMapper.insertMember(pDTO);
-	}
-	
-	//기초대사량 생성 <회원가입할때 돌아감>
-	@Override
-	public int bodyprofile(DietDTO pDTO) {	
-		return DietMapper.bodyprofile(pDTO);
-	}
-	
-	//기존 비밀번호 가져오기
-	@Override
-	public DietDTO getpwd(DietDTO pDTO) {
-		return DietMapper.getpwd(pDTO);
-	}
-	
-	//비밀번호 수정
-	@Override
-	public int pwdChange(DietDTO pDTO) {
-		return DietMapper.pwdChange(pDTO);
-	}
-	
-	//개인정보 수정
-	@Override
-	public int metabolismPost(DietDTO pDTO) {
-		return DietMapper.metabolismPost(pDTO);
-	}
-	
-	//email 중복 확인
-	@Override
-	public DietDTO emailCheck(String email) {
-		return DietMapper.emailCheck(email);
-	}
-	
-	//임시비밀번호 발급
-	@Override
-	public int setTmpPwd(DietDTO pDTO) {
-		return DietMapper.setTmpPwd(pDTO);
-	}
-	
-	//email, name 확인 작업 
-	@Override
-	public DietDTO getemailnmchk(DietDTO pDTO) {
-		return DietMapper.getemailnmchk(pDTO);
-	}
-
 	//설정된 기초대사량
 	@Override
 	public DietDTO myMetabolism(DietDTO pDTO) {
 		return DietMapper.myMetabolism(pDTO);
 	}
-
-	//목표 칼로리 가져오기
+	
+	//칼로리 수정
 	@Override
-	public DietDTO getGoalKcal(DietDTO pDTO) {
-		return DietMapper.getGoalKcal(pDTO);
+	public int metabolismPost(DietDTO pDTO) {
+		return DietMapper.metabolismPost(pDTO);
 	}
+
 	
 	//메뉴가져오기 로직
 	@Override
@@ -557,13 +505,12 @@ public class DietService implements IDietService {
         log.info("emdNm : "+emdNm);
 		
         int page = 1;	// 페이지 초기값 
-		int check = 0; //10개만 찍기
 		
 		try{
 			while(true){
 				log.info("while START");
 				// parsing할 url 지정(API 키 포함해서)
-				String url =  "http://openapi.seoul.go.kr:8088/465354437532636834325a7048424c/xml/TbPublicSptCenter2019/"+page+"/100/";
+				String url =  "http://openapi.seoul.go.kr:8088/465354437532636834325a7048424c/xml/TbPublicSptCenter2019/"+page+"/800/";
 				
 				log.info("1");
 				
@@ -604,7 +551,6 @@ public class DietService implements IDietService {
 							rDTO.setMap_pointy(getTagValue("YCODE", eElement));
 						
 							rlist.add(rDTO);
-							check++;
 							rDTO = null;
 						
 						}
@@ -614,11 +560,10 @@ public class DietService implements IDietService {
 				page += 1;
 				
 				log.info("page number : "+page);
-				log.info("check number : "+check);
+			
 				
-				if(check > 5){	
+				if(page > 5){	
 					break;
-					
 				}
 			}	// while end
 			
@@ -628,6 +573,5 @@ public class DietService implements IDietService {
 		}
 		return rlist;
 	}
-
 
 }

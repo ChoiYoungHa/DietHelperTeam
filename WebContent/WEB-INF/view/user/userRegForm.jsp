@@ -105,11 +105,11 @@
 			
 			<div class="form__field"> 
 				 <input type="text" id="sample2_postcode" placeholder="우편번호" autocomplete="off">
-				 <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기" class="btn btn-primary disabled" required="required" >
+				 <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기" class="btn btn-primary disabled" required="required" style="width:118px;margin:0px 5px 0px 0px;">
 			</div>
 			
 			<div class="form__field">
-                 <input type="text" class="form-control form-control-user" name="addr" id="addr" placeholder="주소를 등록해 주세요." required="required" autocomplete="off">
+                 <input type="text" class="form-control form-control-user" name="addr" id="addr" placeholder="주소를 등록해 주세요." required="required" autocomplete="off" style="color:white;border-width: 0 0;">
             </div> 
 
 

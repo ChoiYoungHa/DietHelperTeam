@@ -38,8 +38,8 @@ public class MyRedisMapper implements IMyRedisMapper, ICommCont {
 		redisDB.setValueSerializer(new Jackson2JsonRedisSerializer<>(RedisDTO.class));
 
 		// 해시 테이블의 경우, 시리얼라이즈 추가
-		redisDB.setHashKeySerializer(new StringRedisSerializer()); // 키
-		redisDB.setHashValueSerializer(new Jackson2JsonRedisSerializer<>(RedisDTO.class)); // 값
+		redisDB.setHashKeySerializer(new StringRedisSerializer()); // 키 생성
+		redisDB.setHashValueSerializer(new Jackson2JsonRedisSerializer<>(RedisDTO.class)); // 값 생성
 
 		// 회원번호
 		String user_no = CmmUtil.nvl(pDTO.getUser_no());
